@@ -1,19 +1,34 @@
 <?php 
 
-
 // This is the propper way to enqueue both scripts and additional CSS.
-// Usage: https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts
-// Generator: https://generatewp.com/register_style/
+
+// For a full list of scripts included with WP visit:
+// https://developer.wordpress.org/reference/functions/wp_enqueue_script/#Default_scripts_included_with_WordPress
+
+// If you would like to learn why, how and mechanics - you can visit:
+// Usage: http://code.tutsplus.com/articles/how-to-include-javascript-and-css-in-your-wordpress-themes-and-plugins--wp-24321
+
 
 function custom_styles() {
-	wp_enqueue_style( 'core', get_template_directory_uri() . '/style.css', false ); 
-}
-function custom_js() {
-	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/scripts/helloworld.js', false );
+    // Register the style first so that WP knows what we are working with:
+    wp_register_style( 'core-css', get_template_directory_uri() . '/css/style.css' );
+    wp_register_style( 'skin-blue', get_template_directory_uri() . '/css/skins/blue.css' );
+ 
+    // Then we need to enqueue them one by one to the theme:
+    wp_enqueue_style( 'core-css' );
+    wp_enqueue_style( 'skin-blue' );
 }
 add_action( 'wp_enqueue_scripts', 'custom_styles' );
-add_action( 'wp_enqueue_scripts', 'custom_js' );
 
+function custom_scripts() {
+    // Register the scripts first so that WP knows what we are working with:
+    // Parameters: Slug, url, dependencies, version, in_footer
+    wp_register_script( 'my-js', get_template_directory_uri() . '/ms.js', ['jquery', 'jcrop'], 1.2, true );
+ 
+    // Then we need to enqueue them one by one to the theme:
+    wp_enqueue_script( 'my-js' );
+}
+add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
 
 
