@@ -31,6 +31,14 @@ function custom_scripts() {
 add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
 
+// Sometimes it is mandatory to have a special version of jQuery. This should be avoided. And allowed only outside admin panel.
+if (!is_admin()) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', ( get_template_directory_uri() . "/js/jquery-1.9.1.min.js"), false, '1.9.1');
+        wp_enqueue_script('jquery');
+}
+
+
 
 // This function is used to register navigation positions within the theme.
 // Usage: https://codex.wordpress.org/Function_Reference/register_nav_menus

@@ -11,3 +11,7 @@ The Idea:
  * This was made for SAE Institute of Technology workshop
  * It is intented to help students learn the ways of WP theming
  * Also, it is indended to be used as a startup blank theme
+
+ Future development:
+ http://www.wpfill.me/ incorporate this somehow.
+ incorporate html boulerplate
