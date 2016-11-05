@@ -1,0 +1,8 @@
+# USED FOR REDIRECTION INTO WP DIRECTORY
+
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^newdigitalmind.digitalmind.rs$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^newdigitalmind.digitalmind.rs$
+RewriteCond %{REQUEST_URI} !wp/
+RewriteRule (.*) /wp/$1 [L]

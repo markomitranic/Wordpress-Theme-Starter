@@ -1,0 +1,13 @@
+// Animation:
+.animate-when-visible.come-in {
+  transform: translateY(150px);
+  opacity: 0;
+  animation: come-in 1.2s ease forwards;
+}
+.animate-when-visible.come-in:nth-child(odd, 3n-1) {
+  animation-duration: 0.8s;  /*So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); opacity: 1; }
+}
