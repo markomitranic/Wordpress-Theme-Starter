@@ -82,9 +82,27 @@
     remove_action('wp_head', 'wp_generator'); // Built-in Meta generator
 
 
-// If we use ACF plugin, we can add a special theme options page like this.
-    // EXAMPLE:> the_field('footer_disclaimer', 'option');
-    if( function_exists('acf_add_options_page') ) {   
+
+// Lets set up ACF PRO silently.
+    // 1. customize ACF paths
+    add_filter('acf/settings/path', 'my_acf_settings_path');
+    function my_acf_settings_path( $path ) {
+        $path = get_stylesheet_directory() . '/acf-plugin/';
+        return $path;
+    }
+    add_filter('acf/settings/dir', 'my_acf_settings_dir');
+    function my_acf_settings_dir( $dir ) {
+        $dir = get_stylesheet_directory_uri() . '/acf-plugin/';
+        return $dir;
+    }
+    include_once( get_stylesheet_directory() . '/acf-plugin/acf.php' );
+
+    // 2. Hide ACF field group menu item on administration pages
+    // add_filter('acf/settings/show_admin', '__return_false');
+
+    // 3. Set up Theme Options page.
+    // USAGE EXAMPLE:> the_field('footer_disclaimer', 'option');
+    if( function_exists('acf_add_options_page') ) {
       acf_add_options_page(array(
         'page_title'  =>  'Template Options',
         'menu_title'  =>  'Template Options',
@@ -93,7 +111,7 @@
         'parent_slug' =>  'themes.php',
         'position'    =>  false,
         'icon_url'    =>  false
-      ));
+        ));
     }
 
 
