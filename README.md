@@ -28,6 +28,10 @@
  * Learn to create a custom page builder via ACF plugin
  * Also, it is indended to be used as a startup blank theme
 
+## The future prospects
+
+We definitely need to add internationalization of the theme, and the content to this workshop.
+
 ## Advanced Custom Fields
 
 I do not own any of the ACF code. This workshop relies heavily on ACF usage.
