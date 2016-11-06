@@ -1,75 +1,13 @@
 // CSS FOR STYLING THE WORDPRESS CONTENT SECTION.
 
 
-// Content Wrapper
-.theContent {
-	max-width: 700px;
-	margin: 0 auto;
-	outline: 0;
-	word-break: break-word;
-	word-wrap: break-word;
-}
-
-// Content itself
 .wysiwyg {
 	padding: 0;
 	box-sizing: border-box;
-	h1, h2, h3, h4, h5, h6 {
-		padding: 0 20px;
-		font-weight: 300;
-		text-transform: uppercase;
-		margin: 52px 0 42px 0;
-		color: #1c1c1c;
-		text-indent: -.4em;
-		font-style: normal;
-		font-size: 24px;
-		line-height: 1.22;
-		letter-spacing: -.018em;
-		&:before {
-			content: '❑';
-			margin-right: 15px;
-		}
-	}
-	h2:before {
-		content: '❑❑';
-	}
-	h3:before {
-		content: '❑❑❑';
-	}
-	h4:before {
-		content: '❑❑❑❑';
-	}
-	h5:before {
-		content: '❑❑❑❑❑';
-	}
-	h6:before {
-		content: '❑❑❑❑❑❑';
-	}
-	a {
-		border-bottom: 1px solid $normal-text;
-		padding-bottom: 0px;
-		box-shadow: inset 0px -2px 0px 0px $normal-text;
-		transition: 0.3s all ease-in-out;
-		border-radius: 0;
-		&:hover {
-			box-shadow: inset 0px -9px 0px 0px $normal-text;
-			color: black;
-			// border-bottom: 1px dotted white;
-			background-color: transparent;
-		}
-	}
-	p {
-		padding: 0 20px;
-		font-weight: 300;
-		font-size: 18px;
-		color: $normal-text;
-		font-style: normal;
-		line-height: 1.58;
-		letter-spacing: -.003em;
-		@media screen and (max-width: 768px) {
-			font-size: 16px;
-		}
-	}
+	outline: 0;
+	word-break: break-word;
+	word-wrap: break-word;
+
 	img {
 		@media screen and (max-width: 400px) {
 		    max-width: 100% !important;
@@ -78,16 +16,6 @@
 		    margin: 0 auto !important;
 		    clear: both!important;
     		float: none!important;
-		}
-	}
-	li {
-		font-weight: 300;
-		font-size: 16px;
-		font-style: normal;
-		line-height: 1.58;
-		letter-spacing: -.003em;
-		@media screen and (max-width: 768px) {
-			font-size: 18px;
 		}
 	}
 	blockquote {
@@ -267,7 +195,6 @@
 			font-style: normal;
 			font-size: 14px;
 			line-height: 1.4;
-			color: darken($normal-text, 30%);
 			letter-spacing: 0;
 		}
 	}
@@ -369,172 +296,5 @@
 		td:last-child {
 			border-right: 0px;
 		}
-	}
-}
-
-// A smaller footprint content.
-.wysiwyg-basic {
-	h1, h2, h3, h4, h5, h6 {
-		padding: 0;
-		font-weight: 300;
-		text-transform: uppercase;
-		margin: 12px 0;
-		color: $dark-text;
-		font-style: normal;
-		font-size: 24px;
-		line-height: 1.22;
-		letter-spacing: -.018em;
-	}
-	h2 {
-		font-size: 20px;
-	}
-	h3 {
-		font-size: 18px;
-	}
-	h4 {
-		font-size: 16px;
-	}
-	h5 {
-		font-size: 14px;
-	}
-	h6 {
-		font-size: 12px;
-	}
-	a {
-		border-bottom: 1px solid $normal-text;
-		padding-bottom: 0px;
-		box-shadow: inset 0px -2px 0px 0px $normal-text;
-		transition: 0.3s all ease-in-out;
-		border-radius: 0;
-		&:hover {
-			box-shadow: inset 0px -9px 0px 0px $normal-text;
-			color: black;
-			// border-bottom: 1px dotted white;
-			background-color: transparent;
-		}
-	}
-	p {
-		padding: 0;
-		font-weight: 300;
-		font-size: 16px;
-		color: $normal-text;
-		font-style: normal;
-		line-height: 1.58;
-		letter-spacing: -.003em;
-		@media screen and (max-width: 768px) {
-			font-size: 18px;
-		}
-	}
-	.aligncenter {
-		display: block;
-		margin: 0 auto;
-	}
-	.alignleft {
-		float: left;
-	}
-	.alignright {
-		float: right;
-	}
-	sub {
-		vertical-align: sub;
-		font-size: smaller;
-	}
-	sup {
-		vertical-align: super;
-		font-size: smaller;
-	}
-	pre {
-		padding: 15px;
-		white-space: pre;
-		white-space: pre-wrap;
-		white-space: pre-line;
-		word-wrap: break-word;
-	}
-	pre,
-	code,
-	kbd,
-	samp {
-		font-family: monospace, sans-serif;
-	}
-	ul {
-		margin: 15px 0 15px 30px;
-	}
-	ol {
-		margin: 15px 0 15px 30px;
-		list-style-type: decimal;
-	}
-	small {
-		font-size: 85%;
-	}
-	strong {
-		font-weight: bold;
-	}
-	img {
-		vertical-align: top;
-	}
-	img {
-		@media screen and (max-width: 400px) {
-		    max-width: 100% !important;
-		    display: block !important;
-		    height: auto!important;
-		    margin: 0 auto !important;
-		    clear: both!important;
-    		float: none!important;
-		}
-	}
-	li {
-		font-weight: 300;
-		font-size: 16px;
-		font-style: normal;
-		line-height: 1.58;
-		letter-spacing: -.003em;
-		@media screen and (max-width: 768px) {
-			font-size: 18px;
-		}
-	}
-	blockquote {
-		background: #f9f9f9;
-		border-left: 10px solid #ccc;
-		margin: 1.5em 10px;
-		padding: 0.5em 10px;
-		quotes: "\201C""\201D""\2018""\2019";
-	}
-	blockquote:before {
-		color: #ccc;
-		content: open-quote;
-		font-size: 4em;
-		line-height: 0.1em;
-		margin-right: 0.25em;
-		vertical-align: -0.4em;
-	}
-	blockquote p {
-		display: inline;
-	}
-	ins {
-		background-color: transparent;
-		color: #000;
-		text-decoration: none;
-	}
-	mark {
-		background-color: #ff9;
-		color: #000;
-		font-style: italic;
-		font-weight: bold;
-	}
-	del {
-		text-decoration: line-through;
-	}
-	abbr[title],
-	dfn[title] {
-		border-bottom: 1px dotted #000;
-		cursor: help;
-	}
-	hr {
-		display: block;
-		height: 1px;
-		border: 0;
-		border-top: 1px solid #ccc;
-		margin: 1em 0;
-		padding: 0;
 	}
 }
