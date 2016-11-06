@@ -7,6 +7,12 @@
 
 get_header();
 
+// We can use this instead of php import method
+get_template_part('menus');
+
+// We can get the blog description like this
+echo get_bloginfo('description');
+
 
 echo 'WELCOME TO FRONT PAGE!!!!';
 

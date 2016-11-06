@@ -14,4 +14,4 @@ else {
 	include ('page.php');
 }
 
-?>
+

@@ -1,3 +1,19 @@
 @import "reset";
 
 @import "content";
+
+
+
+
+
+// =========================================================================
+// --------------------------- USEFUL SNIPPETS -----------------------------
+// =========================================================================
+
+
+// DIMMED BACKGROUND
+// background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("<?php echo $heroimage; ?>");
+
+
+// SRCSET
+// <img src="portfoliox2.jpg" srcset="portfolio.jpg 768w, portfolio.jpg 1x, portfoliox2.jpg 2x" alt="Norman">

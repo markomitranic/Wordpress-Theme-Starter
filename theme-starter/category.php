@@ -11,6 +11,7 @@
 get_header();
 
 
+// Get Posts way of getting posts
 $args = array(
 	'posts_per_page'   => 5,
 	'offset'           => 0,
@@ -34,16 +35,21 @@ var_dump($posts_array);
 
 
 
+// Query Posts way
+	query_posts(['post_type'=> 'post', 'order' => 'DESC', 'posts_per_page'=> 6]);
+	while ( have_posts() ) : the_post();
+		echo the_title();
+	endwhile;
 
 
 
-query_posts(['post_type'=> 'post', 'order' => 'DESC', 'posts_per_page'=> 6]);
-while ( have_posts() ) : the_post();
-	echo the_title();
-endwhile;
-
-
-
+// The basic idea is that all the categories should have the same slugs as the pages... So they will just redirect to page.
+	$category = get_category( get_query_var( 'cat' ) );
+	if ($category->description) {
+		Redirect('/'.$category->description, 301);
+	} else {
+		Redirect('/'.$category->slug, 301);
+	}
 
 
 get_footer();
