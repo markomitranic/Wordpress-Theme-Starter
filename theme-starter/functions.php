@@ -36,7 +36,7 @@
 // Sometimes it is mandatory to have a special version of jQuery. This should be avoided. And allowed only outside admin panel.
     function deregisterJQuery() {
         wp_deregister_script('jquery');
-        wp_register_script('jquery', ( get_template_directory_uri() . "/js/jquery-2.2.4.min.js"), false, '2.2.4');
+        wp_register_script('jquery', ( get_template_directory_uri() . "/js/jquery-3.1.0.min.js"), false, '3.1.0');
         wp_enqueue_script('jquery');
     }
     if (!is_admin()) {
