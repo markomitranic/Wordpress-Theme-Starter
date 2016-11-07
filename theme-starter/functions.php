@@ -146,6 +146,16 @@
         endif;
     }
 
+// We all need a debug method. The second parameter is optional and decides if php is set to die after printing the var.
+  function debug($input, $die = false) {
+    echo '<pre>';
+    print_r($input);
+    echo '</pre>';
+    if ($die) {
+      die();
+    }
+  }
+
 
 // Need to use permanent redirection? Easy peasy.
     function Redirect($url, $permanent = 302) {
@@ -192,7 +202,7 @@
     }
 
 
-// Create a favicon for yout website.
+// Create a favicon for your website.
     // add_action('wp_head', 'create_favicon');
     function create_favicon() {
         $output = '';
