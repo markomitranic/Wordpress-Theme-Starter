@@ -12,6 +12,15 @@
 // =========================================================================
 
 
+// Wordpress disables sessions. But IF we need a way to enable use of session globally...
+    // add_action('init', 'myStartSession', 1);
+    function myStartSession() {
+        if(!session_id()) {
+            session_start();
+        }
+    }
+
+
 
 // ADD CSS STYLES
     add_action( 'wp_enqueue_scripts', 'custom_styles' );
@@ -25,10 +34,13 @@
 
 
 // Sometimes it is mandatory to have a special version of jQuery. This should be avoided. And allowed only outside admin panel.
+    function deregisterJQuery() {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', ( get_template_directory_uri() . "/js/jquery-2.2.4.min.js"), false, '2.2.4');
+        wp_enqueue_script('jquery');
+    }
     if (!is_admin()) {
-            wp_deregister_script('jquery');
-            wp_register_script('jquery', ( get_template_directory_uri() . "/js/jquery-1.9.1.min.js"), false, '1.9.1');
-            wp_enqueue_script('jquery');
+        add_action('wp_enqueue_scripts', 'deregisterJQuery');
     }
 
 
@@ -195,6 +207,33 @@
     }
     
 
+
+// An example of adding a cusotm shortcode. for your WordPress WYSIWYG editor.
+    // add_shortcode( 'fusnota', 'fusnotaHandler' );
+    function fusnotaHandler( $atts, $content = null ) {
+        return '<span class="footnote jailed"><span class="footnote-number">*</span><span class="footnote-body">'.$content.'</span></span>';
+    }
+
+
+// Disable galleries support
+    // add_action( 'admin_head_media_upload_gallery_form', 'mfields_remove_gallery_setting_div' );
+    if( !function_exists( 'mfields_remove_gallery_setting_div' ) ) {
+       function mfields_remove_gallery_setting_div() {
+            print '
+            <style type="text/css">
+         #gallery-settings *{
+               display:none;
+           }
+        </style>';
+        }
+    }
+
+
+// WP_Fill website advises us to disable <p> tags on images.
+    // add_filter('the_content', 'filter_ptags_on_images');
+    function filter_ptags_on_images($content){
+     return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+    }
 
 
 
