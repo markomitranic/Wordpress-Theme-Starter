@@ -44,7 +44,7 @@
     }
 
 
-// NOW LETS GET AL THE JAVASCRIPT
+// NOW LETS GET ALL THE JAVASCRIPT
     add_action( 'wp_enqueue_scripts', 'custom_scripts' );
     function custom_scripts() {
         // Register the scripts first so that WP knows what we are working with:
