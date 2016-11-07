@@ -203,18 +203,65 @@
 
 
 // Create a favicon for your website.
-    // add_action('wp_head', 'create_favicon');
-    function create_favicon() {
-        $output = '';
-        $icon = get_field('favicon', 'option');
+  // add_action('wp_head', 'create_favicon');
+  function create_favicon() {
+      $output = '';
+      $favicon16 = get_field('favicon_16', 'option');
+      $favicon32 = get_field('favicon_32', 'option');
+      $appleicon = get_field('apple_ios_icon', 'option');
+      $applefullscreen = get_field('apple_full_screen', 'option');
+      $androidicon = get_field('android_app_icon', 'option');
+      $androidsplash = get_field('android_app_splash', 'option');
+      $androidname = (get_field('android_app_name', 'option')) ? get_field('android_app_name', 'option') : get_bloginfo('name');
+      $androidcolor = get_field('android_app_color', 'option');
 
-        if ($icon['width'] == 32) {
-            $output .= '<link rel="icon" type="image/png" sizes="32x32" href="'. $icon['url'] .'">';   
-        } else {
-            $output .= '<link rel="icon" type="image/png" sizes="16x16" href="'. $icon['url'] .'">';   
-        }
-        echo $output;
-    }
+
+      if ($applefullscreen) {
+        $output .= '
+          <meta name="apple-mobile-web-app-capable" content="yes">
+          <meta name="apple-mobile-web-app-status-bar-style" content="black">';        
+      }
+      if ($appleicon) {
+        $output .= '<link rel="apple-touch-icon" sizes="180x180" href="' . $appleicon . '">';        
+      }
+      if ($favicon32) {
+        $output .= '<link rel="icon" type="image/png" href="' . $favicon32 . '" sizes="32x32">';        
+      }
+      if ($favicon16) {
+        $output .= '<link rel="icon" type="image/png" href="' . $favicon16 . '" sizes="16x16">';        
+      }
+      if ($androidicon) {
+        $output .= '
+          <link rel="icon" type="image/png" href="' . $androidicon . '" sizes="192x192">
+          <link rel="manifest" href="/manifest.json">
+          <meta name="theme-color" content="' . $androidcolor . '">';
+          // createManifest($androidname, $androidicon, $androidsplash, $androidcolor);
+      }
+
+      function createManifest($name, $icon, $splash, $color) {
+        $manifest = [
+          'name' => $name,
+          'icons' => [
+            [
+              'src' => $icon,
+              'sizes' => '192x192',
+              'type' => 'image\/png'
+            ],
+            [
+              'src' => $splash,
+              'sizes' => '512x512',
+              'type' => 'image\/png'
+            ]
+          ],
+          'theme_color' => $color,
+          'display' => 'standalone',
+          'orientation' => 'portrait'
+        ];        
+      }
+
+      echo $output;
+  }
+
     
 
 

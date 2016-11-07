@@ -159,7 +159,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "The following settings will be used for Android web application. Bear in mind that in order to support all devices. Bear in mind that \"manifest.json\" will be created and edited in order to control this section.",
+            "message": "The following settings will be used for Android web application. Bear in mind that in order to support all devices. Bear in mind that \"manifest.json\" MUST be edited manually.",
             "new_lines": "",
             "esc_html": 1
         },
