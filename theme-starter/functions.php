@@ -233,7 +233,7 @@
       if ($androidicon) {
         $output .= '
           <link rel="icon" type="image/png" href="' . $androidicon . '" sizes="192x192">
-          <link rel="manifest" href="/manifest.json">
+          <link rel="manifest" href="' . get_template_directory_uri() . '/manifest.json">
           <meta name="theme-color" content="' . $androidcolor . '">';
           // createManifest($androidname, $androidicon, $androidsplash, $androidcolor);
       }
