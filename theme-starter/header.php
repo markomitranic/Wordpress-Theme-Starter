@@ -18,7 +18,7 @@ If you are not into that kind of stuff and need special elements, classes and st
 <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <title><?php echo get_the_title() . ' ~ ' . get_bloginfo('name'); ?></title>
+        <title><?php wp_title('');?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />

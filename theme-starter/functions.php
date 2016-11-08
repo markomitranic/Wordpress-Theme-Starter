@@ -163,6 +163,16 @@
         exit();
     }
 
+
+// A propper way to implement WP Titles.
+add_filter('wp_title', 'change_the_title');
+function change_the_title($title) {
+    return $title . ' ~ ' . get_bloginfo('name');
+}
+
+
+
+
 // Create complete metadata tags for Google, Facebook OG and Twitter Cards
     // add_action('wp_head', 'create_meta');
     function create_meta() {
