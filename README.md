@@ -31,6 +31,8 @@
 ## The future prospects
 
 We definitely need to add internationalization of the theme, and the content to this workshop.
+We need to do this asap:
+https://www.toptal.com/wordpress/guide-optimizing-wordpress-performance?utm_campaign=blog_post_guide_optimizing_wordpress_performance&utm_medium=email&utm_source=blog_subscribers
 
 ## Advanced Custom Fields
 
