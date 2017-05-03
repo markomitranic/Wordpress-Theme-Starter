@@ -1,5 +1,11 @@
 # Wordpress Theme Starter
 
+## Usage:
+
+Gulp is set up to concatenate and minify all files withing scss and scripts filders in a particular order. (vendor first, domain second). Do a `npm install` with `gulp watch` and it will compile files directhly to the WP theme dir. Of course, you need to modify the theme dir path in `gulpfile.js:scssOutput` and `gulpfile.js:jsOutput` manually.
+
+Additionally, functions.php is filled with lots and lots of stuff. You need to go through every single one of them, read their comments, and decide if you want to keep them, or perform modifications if needed.
+
 ## Image sizes:
 
 |	NAME			|	SIZE		|	CROP	|
