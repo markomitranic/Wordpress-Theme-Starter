@@ -1,0 +1,119 @@
+.wysiwyg-output {
+	.wrapper {
+		max-width: 700px;
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: Roboto;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: $black-08;
+		}
+		h2 {
+			font-size: 40px;
+			line-height: 41px;
+			margin: 40px 0 10px 0;
+		}
+		h3 {
+			font-size: 24px;
+			line-height: 29px;
+		}
+		p {
+			font-family: Lora;
+			font-size: 21px;
+			line-height: 33px;
+			color: $black-08;
+			margin: 35px 0;
+		}
+		a {
+			color: $black-08;
+			transition: 0.2s color ease-in-out;
+			&:hover {
+				color: $black-06;
+			}
+		}
+		code {
+		    background-color: $black-005;
+		    border-radius: 3px;
+		}
+		blockquote {
+			font-family: Lora;
+			font-size: 21px;
+			font-style: italic;
+			line-height: 33px;
+			color: $black-08;
+		    border-left: 3px solid $black-08;
+		    padding: 5px 0 5px 20px;
+		    margin-left: -20px;
+		    margin-right: -20px;
+		}
+		hr {
+			display: block;
+		    height: 0;
+		    width: 100%;
+			margin-top: 52px;
+    		margin-bottom: 42px;
+   			border: 0;
+    		text-align: center;
+
+		    &::before {
+	    	    content: '...';
+			    display: block;
+			    position: relative;
+			    top: -30px;
+			    color: $black-044;
+			    font-size: 28px;
+			    letter-spacing: 20px;
+		    }
+		}
+		img {
+			max-width: 1000px;
+			margin-left: -150px;
+			margin-right: -150px;
+			height: auto;
+
+			@media screen and (max-width: 1020px) {
+				max-width: 100%;
+				margin: 0;
+			}
+
+			&.aligncenter {
+				//margin: 0 auto;
+			}
+			&.disable-margin {
+				max-width: 100%;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+		p.wp-caption-text {
+			font-family: Roboto;
+			font-size: 12px;
+			text-align: center;
+			line-height: 14px;
+			color: $black-044;
+		}
+		ul {
+			font-family: Lora;
+			font-size: 21px;
+			line-height: 33px;
+			color: $black-08;
+			padding: 0 0 0 20px;
+			list-style-type: circle;
+
+			li {
+				margin: 15px 0;
+			}
+		}
+		ol {
+			font-family: Lora;
+			font-size: 21px;
+			line-height: 33px;
+			color: $black-08;
+			padding: 0 0 0 20px;
+
+			li {
+				margin: 15px 0;
+			}
+		}
+	}
+}

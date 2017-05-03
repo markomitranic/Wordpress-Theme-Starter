@@ -1,19 +1,12 @@
+@import "variables";
 @import "reset";
 
-@import "content";
+@import "blocks/content";
+@import "blocks/editor";
 
+@import "pages/single";
+@import "pages/team";
 
-
-
-
-// =========================================================================
-// --------------------------- USEFUL SNIPPETS -----------------------------
-// =========================================================================
-
-
-// DIMMED BACKGROUND
-// background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("<?php echo $heroimage; ?>");
-
-
-// SRCSET
-// <img src="portfoliox2.jpg" srcset="portfolio.jpg 768w, portfolio.jpg 1x, portfoliox2.jpg 2x" alt="Norman">
+@import "vendor/slick/slick";
+@import "vendor/slick/slick-theme";
+@import "vendor/fontawesome/scss/font-awesome";

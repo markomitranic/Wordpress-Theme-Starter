@@ -8,19 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markomitranic/ZentZent.git"
+    "url": "git+https://github.com/markomitranic/Wordpress-Theme-Starter.git"
   },
   "author": "Marko Mitranic <marko.mitranic@gmail.com> (https://github.com/markomitranic)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/markomitranic/ZentZent/issues"
+    "url": "https://github.com/markomitranic/Wordpress-Theme-Starter/issues"
   },
-  "homepage": "https://github.com/markomitranic/ZentZent#readme",
+  "homepage": "https://github.com/markomitranic/Wordpress-Theme-Starter#readme",
   "devDependencies": {
     "browser-sync": "^2.12.5",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
-    "gulp-sourcemaps": "^2.2.0"
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.1.2"
   }
 }
