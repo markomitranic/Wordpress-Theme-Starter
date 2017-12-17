@@ -223,12 +223,15 @@
   }
 
 
-
-// Clean up HTML from string to get an excerpt
-  function excerpt($text, $length = 256) {
+  // Clean up HTML from string to get an excerpt
+  function excerpt($text, $words = 7, $ellipsis = true) {
       $text = wp_strip_all_tags($text);
       $text = trim(preg_replace('/\s+/', ' ', $text)); // Remove new lines
-      $text = substr($text, 0, $length);
+      $textArray = explode(' ', $text);
+      $text = array_slice($textArray, 0, $words);
+      $text = implode(" ", $text);
+      if ($ellipsis) { $text .= "…"; }
+
       return $text;
   }
 
